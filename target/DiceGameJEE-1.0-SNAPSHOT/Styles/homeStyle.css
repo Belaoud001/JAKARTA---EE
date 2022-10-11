@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins" , sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #28282f;
+    padding: 30px;
+}
+
+.container{
+    position: relative;
+    max-width: 1000px;
+    width: 100%;
+    background: #fbfbfd;
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 30px 40px 30px rgba(19, 19, 19, 0.65);
+    perspective: 2700px;
+    height: 730px;
+}
+
+.nav-links{
+    display: flex;
+    align-items: center;
+    background: #f1f1f1;
+    padding: 20px 15px;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+.nav-links li{
+    list-style: none;
+    margin: 0 12px;
+}
+.nav-links li a{
+    position: relative;
+    color: #333;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 6px 0;
+    text-decoration: none;
+}
+.nav-links li a:before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: #ad810b;
+    border-radius: 12px;
+    transition: all 0.4s ease;
+}
+.nav-links li a:hover:before {
+    width: 100%;
+}
+
+.nav-links li.forward a:before{
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease;
+}
+.nav-links li.forward a:hover:before{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.center-nav {
+    display: flex;
+}
+
+.adjust {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.icon {
+    margin-right: 10px;
+}
+
+.ring {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 83%;
+    margin-top: 5%;
+    border: 1px solid #d9d9d9;
+    border-radius: 10px;
+    padding-top: 20%;
+    padding-bottom: 20%;
+}
+
+img {
+    width: 153px;
+    height: 153px;
+}
+
+/* combo Box
+ */
+
+span.msg,
+span.choose {
+    color: #555;
+    padding: 5px 0 10px;
+    display: inherit;
+    margin-bottom: 10px;
+
+}
+.selector {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    margin: 50px auto 0;
+    text-align: center;
+    margin-bottom: 5% !important;
+}
+
+/*Styling Selectbox*/
+.dropdown {
+    width: 300px;
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 0 2px rgb(204, 204, 204);
+    transition: all .5s ease;
+    position: relative;
+    font-size: 14px;
+    color: #474747;
+    text-align: left;
+    outline: 1px solid #ad810b;
+
+}
+.dropdown .select {
+    cursor: pointer;
+    display: block;
+    padding: 10px
+}
+
+.dropdown .select > i {
+    font-size: 13px;
+    color: #888;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    float: right;
+    line-height: 20px;
+}
+.dropdown:hover {
+    box-shadow: 0 0 4px rgb(204, 204, 204)
+}
+.dropdown:active {
+    background-color: #f8f8f8
+}
+.dropdown.active:hover,
+.dropdown.active {
+    box-shadow: 0 0 4px rgb(204, 204, 204);
+    border-radius: 2px 2px 0 0;
+    background-color: #f8f8f8
+}
+.dropdown.active .select > i {
+    transform: rotate(-90deg)
+}
+.dropdown .dropdown-menu {
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    left: 0;
+    margin-top: 1px;
+    box-shadow: 0 1px 2px rgb(204, 204, 204);
+    border-radius: 0 1px 2px 2px;
+    overflow: hidden;
+    display: none;
+    max-height: 144px;
+    overflow-y: auto;
+    z-index: 9
+}
+.dropdown .dropdown-menu li {
+    padding: 10px;
+    transition: all .2s ease-in-out;
+    cursor: pointer
+}
+.dropdown .dropdown-menu {
+    padding: 0;
+    list-style: none;
+}
+.dropdown .dropdown-menu li:hover {
+    background-color: #f2f2f2
+}
+.dropdown .dropdown-menu li:active {
+    background-color: #e2e2e2
+}
+
+button {
+    width: 100px;
+    text-align: center;
+    font-size: large;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: #e7e7e7;
+    border: 1px solid #ad810b;
+    box-shadow: 10px 10px 10px #e2e2e2;
+    transform: scale(1.1);
+    transition: transform 330ms ease-in-out;
+}
+
+button:active {
+    border: none;
+    transition: transform 330ms ease-in-out;
+}
+
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+.toast {
+    border-radius: 12px;
+    background: #fff;
+    padding: 20px 35px 20px 25px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border-left: 6px solid #ad810b;
+    width: 60%;
+    margin-top: 15px;
+}
+
+.toast-content .check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: 35px;
+    background-color: #ad810b;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 50%;
+}
+
+.toast .toast-content {
+    display: flex;
+    align-items: center;
+}
+
+.toast-content .message {
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+}
+
+.message .text {
+    font-size: 15px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.message .text-1 {
+    font-weight: 600;
+    color: #ad810b;
+}
+
+.text {
+    margin-left: 13px;
+}
+
+.toast .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    padding: 5px;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.toast .close:hover {
+    opacity: 1;
+}
+
+.smile {
+    transform: scale(1.4);
+}
+.btn {
+    margin-top: 15px;
+}
+
+.brief-box {
+    padding: 9px;
+    border: 1px solid #d9d9d9;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 215px;
+}
+
+.h2Style {
+    margin-bottom: 10px;
+    margin-top: 16px;
+}

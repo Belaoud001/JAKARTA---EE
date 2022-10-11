@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+
+    <context-param>
+        <param-name>storage_type</param-name>
+        <param-value>MySl</param-value>
+    </context-param>
+
+    <filter>
+        <filter-name>SecurityFilter</filter-name>
+        <filter-class>com.game.Web.Filters.SecurityFilter</filter-class>
+    </filter>
+
+    <filter>
+        <filter-name>ExceptionFilter</filter-name>
+        <filter-class>com.game.Web.Filters.ExceptionFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>SecurityFilter</filter-name>
+        <url-pattern>/azerty</url-pattern>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>ExceptionFilter</filter-name>
+        <url-pattern>/azert</url-pattern>
+    </filter-mapping>
+
+    <welcome-file-list>
+        <welcome-file>/WEB-INF/Views/loginPage.jsp</welcome-file>
+    </welcome-file-list>
+
+</web-app>

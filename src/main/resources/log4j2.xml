@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+	<Properties>
+		<Property name="LOG_DIR">
+			C:\Users\Hp\IdeaProjects\DiceGameJEE\logs
+		</Property>
+	</Properties>
+	<Appenders>
+		<RollingFile
+				name="loggerFile"
+				fileName="${LOG_DIR}\log.log"
+				filePattern="${LOG_DIR}\log_%i.log"
+				ignoreExceptions="false">
+			<PatternLayout>
+				<Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %m%n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<SizeBasedTriggeringPolicy size="20 MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="5" />
+		</RollingFile>
+
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout
+					pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %m%n" />
+		</Console>
+	</Appenders>
+	<Loggers>
+		<Root level="trace">
+			<AppenderRef ref="loggerFile" />
+		</Root>
+	</Loggers>
+</Configuration>
